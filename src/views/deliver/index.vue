@@ -1,19 +1,15 @@
 <template>
     <ion-content>
       <div class="container p-3">
-        <!-- Map Section with Background Image -->
         <div class="map-section mb-4 position-relative">
-          <!-- Simulated Delivery Path -->
           <div class="path"></div>
         </div>
   
-        <!-- Delivery Info -->
         <div class="delivery-info text-center mb-4">
           <h4 class="mb-2">10 minutes left</h4>
           <p class="text-muted">Delivery to Jl. Kpg Sutoyo</p>
         </div>
   
-        <!-- Progress Bar -->
         <div class="progress mb-4">
           <div
             class="progress-bar bg-success"
@@ -25,7 +21,6 @@
           ></div>
         </div>
   
-        <!-- Courier Info -->
         <div class="courier-info d-flex align-items-center">
           <img
             src="https://tse2.mm.bing.net/th?id=OIP.pkZGhbuEAHOqCbDWvGQCbwHaHa&pid=Api&P=0&h=220"
@@ -50,21 +45,18 @@
     name: 'DeliveryTracker',
     data() {
       return {
-        progress: 66, // Dynamic progress bar value
+        progress: 66, 
       };
     },
     methods: {
-      // Simulate the call action
       makeCall() {
         console.log('Calling the courier...');
-        // Here you would handle the logic to call the courier or trigger an action
       },
     },
   };
   </script>
   
   <style scoped>
-  /* Map Section */
   .map-section {
     width: 100%;
     height: 300px;
@@ -75,7 +67,6 @@
     position: relative;
   }
   
-  /* Simulated Delivery Path */
   .path {
     position: absolute;
     top: 20%;
@@ -87,7 +78,6 @@
     background: transparent;
   }
   
-  /* Delivery Info */
   .delivery-info {
     text-align: center;
   }
@@ -102,7 +92,6 @@
     color: #6c757d;
   }
   
-  /* Progress Bar */
   .progress {
     height: 1rem;
     margin-bottom: 1.5rem;
@@ -111,8 +100,7 @@
   .progress-bar {
     height: 100%;
   }
-  
-  /* Courier Info */
+
   .courier-info {
     display: flex;
     align-items: center;
@@ -140,7 +128,7 @@
   }
   
   .coffee-button {
-    background-color: #6f4e37; /* Coffee brown */
+    background-color: #6f4e37;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -155,7 +143,7 @@
   }
   
   .coffee-button:hover {
-    background-color: #5a3927; /* Darker coffee brown */
+    background-color: #5a3927;
     transform: scale(1.05);
   }
   
@@ -163,7 +151,6 @@
     font-size: 20px;
   }
   
-  /* Customize Ion-Button for the Coffee Theme */
   ion-button {
     --background: #6f4e37;
     --color: white;

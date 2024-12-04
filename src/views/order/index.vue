@@ -10,7 +10,6 @@
       </ion-header>
   
       <ion-content>
-        <!-- Toggle between Delivery and Pickup -->
         <ion-segment value="delivery" class="order-toggle" @ionChange="toggleDeliveryType">
           <ion-segment-button value="delivery">
             <ion-label>Deliver</ion-label>
@@ -19,8 +18,7 @@
             <ion-label>Pick Up</ion-label>
           </ion-segment-button>
         </ion-segment>
-  
-        <!-- Delivery Address Section -->
+
         <div class="delivery-address-section" v-if="deliveryType === 'delivery'">
           <h4 class="section-title">Delivery Address</h4>
           <p>
@@ -30,8 +28,7 @@
           <ion-button expand="clear" size="small" class="coffee-btn-outline" @click="editAddress()">Edit Address</ion-button>
           <ion-button expand="clear" size="small" class="coffee-btn-outline" @click="addNote">Add Note</ion-button>
         </div>
-  
-        <!-- Order Item -->
+
         <ion-item class="order-item">
           <ion-thumbnail slot="start">
             <img
@@ -73,8 +70,7 @@
           </div>
         </div>
       </ion-content>
-  
-      <!-- Footer with Order Button -->
+ 
       <ion-footer>
         <ion-toolbar>
           <div class="footer-content">
@@ -201,7 +197,7 @@
   }
   
   .coffee-btn-primary {
-    background-color: #b5723a; /* Coffee-brown background */
+    background-color: #b5723a; 
     color: #fff;
     font-weight: bold;
     border-radius: 25px;
@@ -211,16 +207,15 @@
   }
   
   .coffee-btn-primary:disabled {
-    background-color: #d3d3d3; /* Disabled state */
+    background-color: #d3d3d3; 
     color: #ffffff;
   }
   
   .coffee-btn-primary:hover:not(:disabled) {
-    background-color: #a1622d; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #a1622d; 
+    transform: scale(1.05);
   }
-  
-  /* Other styles */
+
   .order-toggle {
     margin: 16px 0;
   }
