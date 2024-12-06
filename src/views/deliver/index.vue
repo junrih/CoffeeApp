@@ -1,15 +1,28 @@
 <template>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+          <button class="back-button" @click="goBack">
+            <ion-icon name="arrow-back-outline" class="back-icon"></ion-icon>
+            Back
+          </button>
+        </ion-buttons>
+        <ion-title>Delivery Tracker</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
     <ion-content>
       <div class="container p-3">
         <div class="map-section mb-4 position-relative">
           <div class="path"></div>
         </div>
-  
+
         <div class="delivery-info text-center mb-4">
           <h4 class="mb-2">10 minutes left</h4>
           <p class="text-muted">Delivery to Jl. Kpg Sutoyo</p>
         </div>
-  
+
         <div class="progress mb-4">
           <div
             class="progress-bar bg-success"
@@ -20,7 +33,7 @@
             aria-valuemax="100"
           ></div>
         </div>
-  
+
         <div class="courier-info d-flex align-items-center">
           <img
             src="https://tse2.mm.bing.net/th?id=OIP.pkZGhbuEAHOqCbDWvGQCbwHaHa&pid=Api&P=0&h=220"
@@ -38,23 +51,29 @@
         </div>
       </div>
     </ion-content>
-  </template>
-  
-  <script>
-  export default {
-    name: 'DeliveryTracker',
-    data() {
-      return {
-        progress: 66, 
-      };
+  </ion-page>
+</template>
+
+<script>
+export default {
+  name: "DeliveryTracker",
+  data() {
+    return {
+      progress: 66,
+    };
+  },
+  methods: {
+    goBack() {
+      console.log("Navigating back...");
+      this.$router.back(); 
     },
-    methods: {
-      makeCall() {
-        console.log('Calling the courier...');
-      },
+    makeCall() {
+      console.log("Calling the courier...");
     },
-  };
-  </script>
+  },
+};
+</script>
+
   
   <style scoped>
   .map-section {
@@ -164,5 +183,40 @@
     --background: #5a3927;
     transform: scale(1.05);
   }
+  .back-button {
+  background-color: #6f4e37; /* Coffee color */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+  background-color: #5a3927; /* Darker coffee color on hover */
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.back-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+ion-toolbar {
+  --background: #6f4e37; /* Dark coffee background */
+  --color: white; /* Text color */
+}
+
+ion-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
   </style>
   
