@@ -7,6 +7,14 @@
           </ion-buttons>
           <ion-title>Order</ion-title>
         </ion-toolbar>
+        <div class="refresh-container" @click="refreshPage">
+    <div class="coffee-cup">
+      <div class="steam steam1"></div>
+      <div class="steam steam2"></div>
+      <div class="steam steam3"></div>
+      <ion-icon name="cafe-outline" class="coffee-icon"></ion-icon>
+    </div>
+  </div>
       </ion-header>
   
       <ion-content>
@@ -177,6 +185,10 @@
       addNote() {
         console.log("Add Note Clicked");
       },
+      refreshPage() {
+    console.log("Refreshing content...");
+    location.reload(); 
+  },
     },
   });
   </script>
@@ -268,6 +280,78 @@
   .wallet-info {
     text-align: left;
   }
-  
+  .refresh-container {
+  position: absolute;
+  top: 5px; 
+  left: 90%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coffee-cup {
+  position: relative;
+  background-color: #6f4e37; 
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.coffee-cup:hover {
+  background-color: #5a3d2c; 
+  transform: scale(1.1); 
+}
+
+
+.coffee-icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.steam {
+  position: absolute;
+  width: 8px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: rise 2s infinite ease-in-out;
+}
+
+.steam1 {
+  animation-delay: 0s;
+}
+
+.steam2 {
+  animation-delay: 0.2s;
+  left: 40%;
+}
+
+.steam3 {
+  animation-delay: 0.4s;
+  left: 60%;
+}
+
+
+@keyframes rise {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+}
   </style>
   
