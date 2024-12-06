@@ -184,7 +184,7 @@ export default {
     transform: scale(1.05);
   }
   .back-button {
-  background-color: #6f4e37; /* Coffee color */
+  background-color: #6f4e37; 
   color: #fff;
   padding: 8px 16px;
   border: none;
@@ -199,8 +199,8 @@ export default {
 }
 
 .back-button:hover {
-  background-color: #5a3927; /* Darker coffee color on hover */
-  transform: scale(1.05); /* Slight enlargement on hover */
+  background-color: #5a3927; 
+  transform: scale(1.05); 
 }
 
 .back-icon {
@@ -209,8 +209,8 @@ export default {
 }
 
 ion-toolbar {
-  --background: #6f4e37; /* Dark coffee background */
-  --color: white; /* Text color */
+  --background: #6f4e37; 
+  --color: white; 
 }
 
 ion-title {
